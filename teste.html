@@ -3,159 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extreme Sports</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <title>Agência de Empregos</title>
+    <style>
+        /* CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 20px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header h1 {
+            padding: 10px;
+        }
+        /* Adicione mais estilos conforme necessário */
+    </style>
 </head>
 <body>
     <header>
-        <h1><img src="sports-removebg-preview.png" alt="Extreme Sports Logo" width="150" height="150"> Bem-vindo ao Extreme Sports</h1>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showTab('homepage')">Homepage</a></li>
-                <li><a href="#" onclick="showTab('training')">Registro de Novos Treinos</a></li>
-                <li><a href="#" onclick="showTab('login')">Página de Login</a></li>
-                <li><a href="#" onclick="showTab('cadastro')">Página de Cadastro</a></li>
-                <li><a href="#" onclick="showTab('dashboard')">Dashboard</a></li>
-                <li><a href="#" onclick="showTab('Corrida')">Corrida</a></li>
-                <li><a href="#" onclick="showTab('Inscrições')">Inscrições</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Agência de Empregos</h1>
+        </div>
     </header>
-    <main>
-        <section id="homepage" class="tab-content">
-            <!-- Conteúdo da Página Inicial -->
-            <h2>Bem-vindo à Extreme Sports!</h2>
-            <p>Uma academia dedicada ao seu sucesso e bem-estar.</p>
-            <p>Por que escolher a Extreme Sports?</p>
-            <p>A Extreme Sports oferece treinamentos especializados, equipamentos de última geração e uma equipe qualificada para ajudá-lo a alcançar seus objetivos de forma eficaz. Além disso, proporcionamos um ambiente amigável e motivador para todos os níveis de condicionamento físico.</p>
-            <p>Nossos Treinos</p>
-            <p>Na Extreme Sports, oferecemos uma variedade de treinamentos, desde musculação até aulas de grupo, como spinning, zumba, pilates e muito mais. Temos algo para todos!</p>
-            <p>Entre em Contato</p>
-            <p>Estamos prontos para ajudar você a iniciar sua jornada fitness! Entre em contato conosco para mais informações.</p>
-        </section>
-
-        <section id="training" class="tab-content">
-            <!-- Conteúdo da Página de Registro de Treinos -->
-            <h2>Registro de Treinos</h2>
-            <!-- Adicione um formulário de registro de treinos aqui -->
-            <form id="training-form">
-                <label for="exercise">Exercício:</label>
-                <input type="text" id="exercise" name="exercise" required>
-                <label for="sets">Número de Séries:</label>
-                <input type="number" id="sets" name="sets" required>
-                <label for="reps">Número de Repetições:</label>
-                <input type="number" id="reps" name="reps" required>
-                <label for="weight">Peso (em Kg):</label>
-                <input type="number" id="weight" name="weight" required>
-                <label for="date">Data do Treino:</label>
-                <input type="date" id="date" name="date" required>
-                <label for="observations">Observações:</label>
-                <textarea id="observations" name="observations"></textarea>
-                <button type="button" onclick="registerTraining()">Registrar</button>
-            </form>
-        </section>
-
-        <section id="login" class="tab-content">
-            <!-- Conteúdo da Página de Login -->
-            <h2>Página de Login</h2>
-            <!-- Adicione um formulário de login aqui -->
-            <form id="login-form">
-                <label for="username">Nome de Usuário:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="button" onclick="login()">Login</button>
-            </form>
-        </section>
-
-        <section id="cadastro" class="tab-content">
-            <!-- Conteúdo da Página de Cadastro -->
-            <h2>Página de Cadastro</h2>
-            <!-- Adicione um formulário de cadastro aqui -->
-            <form id="cadastro-form">
-                <label for="fullName">Nome Completo:</label>
-                <input type="text" id="fullName" name="fullName" required>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="newUsername">Nome de Usuário:</label>
-                <input type="text" id="newUsername" name="newUsername" required>
-                <label for="newPassword">Senha:</label>
-                <input type="password" id="newPassword" name="newPassword" required>
-                <button type="button" onclick="register()">Cadastrar</button>
-            </form>
-        </section>
-
-        <section id="dashboard" class="tab-content">
-            <!-- Conteúdo do Dashboard -->
-            <h2>Dashboard</h2>
-            <p>Estatísticas:</p>
-            <ul>
-                <li>Total de Clientes: 300</li>
-                <li>Horas de Treino: 1200</li>
-                <li>Faturamento Mensal: $15,000</li>
-            </ul>
-            <!-- Adicione um elemento canvas para o gráfico -->
-            <div id="chart-container">
-                <canvas id="myDoughnutChart"></canvas>
-            </div>
-        </section>
-       
-
-<!-- New Section for Charity Run -->
-<section id="Corrida" class="tab-content">
-    <h2>Corrida Beneficente - Extreme Sports</h2>
-    <p><strong>Sobre a Corrida</strong></p>
-    <p>A corrida beneficente - Extreme Sports tem o objetivo de promover a solidariedade e incentivar a prática de exercícios físicos. Este evento solidário visa unir atletas, entusiastas do esporte e membros da comunidade em uma corrida de 10km, uma iniciativa que transcende o aspecto esportivo, concentrando esforços na assistência a quem mais precisa.</p>
-    <p>Todo o lucro da Corrida será revertido para apoiar hospitais locais e famílias carentes da região.</p>
-
-    <p><strong>Inscrições</strong></p>
-    <p>Inscrições para a corrida beneficente da Academia Extreme Sports já estão abertas! Se você deseja participar desta iniciativa solidária que visa apoiar hospitais locais e famílias carentes, esta é a oportunidade de se engajar em uma causa nobre através do esporte.</p>
-    <p>Para se inscrever, você pode acessar o site oficial da Academia Extreme Sports e preencher o formulário de inscrição online. Além disso, as inscrições também podem ser feitas presencialmente nas instalações da academia, localizada em [endereço].</p>
-    <p>Há diferentes categorias de inscrição para atender a diversos perfis de participantes, incluindo opções para corredores profissionais, amadores, caminhantes e grupos familiares. Certifique-se de selecionar a categoria que melhor se adequa ao seu interesse e habilidades.</p>
-
-    <p><strong>Perguntas frequentes sobre a Corrida Beneficente da Academia Extreme Sports</strong></p>
-    <ol>
-        <li><strong>Quando e onde será realizada a corrida beneficente?</strong><br>
-            A corrida beneficente está agendada para [data] e ocorrerá no [local] da Academia Extreme Sports.</li>
-        <li><strong>Quais são as categorias de participação disponíveis na corrida?</strong><br>
-            Teremos categorias para corredores profissionais, amadores, caminhantes e grupos familiares, garantindo que pessoas de diferentes níveis de condicionamento físico e idades possam participar.</li>
-        <li><strong>Como posso me inscrever para a corrida?</strong><br>
-            As inscrições podem ser feitas online através do nosso site oficial ou presencialmente na Academia Extreme Sports, localizada em [endereço].</li>
-        <li><strong>Para onde vão os recursos arrecadados com as inscrições?</strong><br>
-            Todos os recursos arrecadados serão integralmente destinados ao suporte de hospitais locais e para oferecer assistência às famílias carentes da região.</li>
-        <li><strong>Existe um prazo para as inscrições?</strong><br>
-            Sim, a data limite para inscrições é [data limite de inscrição]. É importante se inscrever dentro deste prazo para garantir sua participação na corrida.</li>
-        <li><strong>Posso participar como voluntário no evento?</strong><br>
-            Sim, se você não pretende correr, mas deseja apoiar como voluntário, entre em contato conosco através do nosso site ou visite a Academia Extreme Sports para mais informações sobre voluntariado.</li>
-        <li><strong>Haverá atividades além da corrida durante o evento?</strong><br>
-            Sim, além da corrida, teremos atividades paralelas para todas as idades, promovendo um dia de integração, conscientização e solidariedade.</li>
-        <li><strong>É obrigatório algum tipo de preparação especial para participar da corrida?</strong></li>
-    </ol>
-</section>
-
-    <!-- Registration Form -->
-    <section id="Inscrições" class="tab-content">
-    <h3>Formulário de Inscrição</h3>
-    <form id="registration-form">
-        <label for="name">Nome Completo:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="category">Categoria de Participação:</label>
-        <select id="category" name="category" required>
-            <option value="profissional">Corredor Profissional</option>
-            <option value="amador">Corredor Amador</option>
-            <option value="caminhante">Caminhante</option>
-            <option value="familiar">Grupo Familiar</option>
-        </select>
-        <button type="button" onclick="registerForRace()">Inscrever-se</button>
-    </form>
-</section>
-    </main>
-    <footer>
-        <p>© 2024 Extreme Sports. Todos os direitos reservados.</p>
-    </footer>
+    <div class="container">
+        <!-- Aqui você pode adicionar mais conteúdo HTML -->
+    </div>
+    <script>
+        // JavaScript
+        // Se quiser, adicione funcionalidades JavaScript aqui
+    </script>
 </body>
 </html>
+
